@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="A beautiful digital wedding invitation crafted by 7kaytna. Join us to celebrate this special day." />
+<meta name="keywords" content="wedding invitation, digital wedding invitation, wedding celebration, 7kaytna" />
+<meta name="author" content="7kaytna" />
+<meta name="theme-color" content="#1E4538" />
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ahmed & Sarah Wedding Invitation" />
+<meta property="og:description" content="You are invited to celebrate our special day with us." />
+<meta property="og:image" content="assets/images/photo.jpg" />
+
+<!-- Additional Meta Tags -->
+<meta property="instagram:handle" content="@7kaytna.eg" />
+
+<title>Wedding Invitation | Ahmed & Sarah</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>"><link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ivory:#F7EFE0;
+    --ivory-soft:#EFE4CE;
+    --ivory-lighter:#FBF8F3;
+    --ink:#2A2218;
+    --ink-soft:#6E5F4B;
+    --ink-lighter:#8B7B69;
+    --gold:#A98248;
+    --gold-bright:#C4A86B;
+    --gold-deep:#7E5E2E;
+    --gold-line:rgba(169,130,72,0.32);
+    --gold-line-strong:rgba(169,130,72,0.5);
+    --accent:#1E4538;
+    --accent-deep:#0F2A22;
+    --accent-light:#2D6B5F;
+    --on-accent:#F1E2BE;
+    --rose:#D8A8A8;
+    --rose-deep:#B8888D;
+    --font-serif:'Cormorant Garamond', Georgia, serif;
+    --font-display:'Playfair Display', Georgia, serif;
+    --font-sans:'Jost', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(168,130,72,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(30,69,56,0.05) 0%, transparent 50%),
+      linear-gradient(180deg, #FBF8F3 0%, #F2EDDF 50%, #EBE2D0 100%);
+    font-family: var(--font-sans);
+    color: var(--ink);
+  }
+
+  .invite{
+    width: 100%;
+    background: linear-gradient(180deg, #FDFBF7 0%, #F9F5ED 100%);
+    color: var(--ink);
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body.cover-active{ overflow:hidden; height:100vh; }
+  body.cover-active .invite{ overflow:hidden; max-height:100vh; }
+
+  /* ---------- envelope cover ---------- */
+  .cover{
+    position:fixed; inset:0;
+    z-index: 200;
+    background: radial-gradient(ellipse at 50% 35%, #1c4438 0%, #0F2A22 65%, #07150F 100%);
+    color: #F1E2BE;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    cursor:pointer;
+    transition: transform .6s cubic-bezier(.65,0,.35,1), opacity .5s ease;
+  }
+  .cover.opened{
+    transform: translateY(-100%);
+    opacity: 0.6;
+    pointer-events:none;
+  }
+  .cover-frame{
+    position:absolute; inset:18px;
+    border: 1px solid rgba(212,179,116,0.45);
+    pointer-events:none;
+  }
+  .cover-frame::before, .cover-frame::after{
+    content:''; position:absolute; width:30px; height:30px;
+    border: 1px solid #D4B374;
+  }
+  .cover-frame::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
+  .cover-frame::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+  .cover-eyebrow{
+    font:500 13px/1 var(--font-sans);
+    letter-spacing:0.6em; text-transform:uppercase;
+    color:#D4B374;
+    margin-bottom:24px;
+  }
+  .cover-title{
+    margin:0;
+    font-family: var(--font-display);
+    font-style: italic; font-weight:600;
+    font-size: 23px; line-height:1.2;
+    color:#F1E2BE;
+  }
+  .cover-names{
+    margin-top:20px;
+    font-family: var(--font-display);
+    font-style: italic; font-weight:600;
+    font-size: 52px; line-height:1;
+    color:#F1E2BE;
+  }
+  .cover-brand{
+    margin:0;
+    padding: 20px 20px;
+    font-family: var(--font-display);
+    font-style: italic; font-weight:600;
+    font-size: 23px; line-height:1.2;
+    color:#F1E2BE;
+  }
+
+  .cover-names .amp{ color:#D4B374; font-weight:400; font-size:34px; margin:0 8px; }
+  .cover-date{
+    margin-top:24px;
+    font:500 12px/1 var(--font-sans);
+    letter-spacing:0.35em; text-transform:uppercase;
+    color: rgba(241,226,190,0.7);
+  }
+  .cover-tap{
+    margin-top:52px;
+    display:inline-flex; align-items:center; gap:14px;
+    font:500 11px/1 var(--font-sans);
+    letter-spacing:0.45em; text-transform:uppercase;
+    color:#D4B374;
+  }
+  .cover-tap .ring-icon{
+    width:38px; height:38px; border-radius:50%;
+    border:1.5px solid #D4B374;
+    display:flex; align-items:center; justify-content:center;
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%, 100%{ box-shadow: 0 0 0 0 rgba(212,179,116,0.35); }
+    50%{ box-shadow: 0 0 0 10px rgba(212,179,116,0); }
+  }
+
+  /* Background pattern */
+  .invite::before{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background-image: 
+      radial-gradient(circle at 2px 2px, rgba(169,130,72,0.03) 1px, transparent 1px),
+      radial-gradient(circle at 20% 30%, rgba(216,168,168,0.04) 0%, transparent 30%),
+      radial-gradient(circle at 80% 70%, rgba(30,69,56,0.03) 0%, transparent 40%);
+    background-size: 40px 40px, 100% 100%, 100% 100%;
+    pointer-events:none;
+    z-index:1;
+  }
+
+  .music-btn{
+    position:fixed;
+    top:28px; right:24px;
+    z-index:35;
+    height:44px;
+    padding:0 12px 0 14px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border-radius:999px;
+    border:1.5px solid var(--gold-line-strong);
+    background: rgba(247,239,224,0.88);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    color: var(--ink);
+    cursor:pointer;
+    font: 500 11px/1 var(--font-sans);
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    box-shadow: 0 4px 16px rgba(42,34,24,0.12), inset 0 1px 1px rgba(255,255,255,0.6);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .music-btn:hover{
+    border-color: var(--gold);
+    background: rgba(247,239,224,0.95);
+    box-shadow: 0 6px 24px rgba(42,34,24,0.16), inset 0 1px 1px rgba(255,255,255,0.8);
+    transform: translateY(-2px);
+  }
+  .music-btn .dot{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:24px; height:24px; border-radius:50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+    color:var(--ivory);
+    flex-shrink:0;
+    box-shadow: 0 2px 8px rgba(169,130,72,0.3);
+  }
+  .music-btn .bars{
+    display:inline-flex; align-items:flex-end; gap:2px; height:12px;
+  }
+  .music-btn .bars span{
+    display:inline-block; width:2.5px; border-radius:1px;
+    background: linear-gradient(180deg, var(--gold), var(--gold-deep));
+  }
+  .music-btn.playing .bars span{ animation: eq 0.9s ease-in-out infinite; }
+  .music-btn.playing .bars span:nth-child(1){ height:4px; animation-delay:0s; }
+  .music-btn.playing .bars span:nth-child(2){ height:9px; animation-delay:0.15s; }
+  .music-btn.playing .bars span:nth-child(3){ height:6px; animation-delay:0.3s; }
+  .music-btn.playing .bars span:nth-child(4){ height:11px; animation-delay:0.45s; }
+  .music-btn:not(.playing) .bars span{ height:3px; }
+  @keyframes eq{
+    0%,100%{ transform:scaleY(0.4); }
+    50%{ transform:scaleY(1); }
+  }
+
+  .hero{
+    padding: 100px 40px 48px;
+    text-align:center;
+    position:relative;
+    z-index:2;
+  }
+  .hero-brand{
+    margin:0;
+    padding: 20px 0px;
+    font-family: var(--font-display);
+    font-size: 50px; line-height:1.2;
+    font-style: italic; font-weight:600;
+  }
+  .eyebrow{
+    font:400 11px/1 var(--font-sans);
+    letter-spacing:0.6em;
+    text-transform:uppercase;
+    color: var(--gold);
+    margin-bottom:25px;
+    font-weight:500;
+  }
+  .guest-name{
+    margin:0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight:500;
+    font-size:56px;
+    line-height:1.1;
+    color: var(--gold);
+    text-shadow: 0 2px 4px rgba(42,34,24,0.08);
+  }
+  .hero-lede{
+    margin-top:16px; margin-bottom:0;
+    font:300 16px/1.6 var(--font-serif);
+    color: var(--ink);
+    max-width:340px;
+    margin-left:auto; margin-right:auto;
+    letter-spacing: 0.5px;
+  }
+
+  .photo-wrap{
+    padding: 0 40px;
+    max-width: 680px;
+    margin: 0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .photo-frame{
+    position:relative;
+    width:100%;
+    aspect-ratio: 1/1;
+    overflow:hidden;
+    box-shadow: 0 20px 60px rgba(42,34,24,0.15), 0 0 0 3px var(--gold-line-strong);
+    background: linear-gradient(135deg, #2c5747, #163228);
+  }
+  .photo-frame::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(0,0,0,0.05) 100%);
+    z-index:2;
+    pointer-events:none;
+  }
+  .photo-frame img{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .corner{
+    position:absolute; width:20px; height:20px;
+    border: 2px solid var(--gold);
+    z-index:3;
+  }
+  .corner.tl{ top:12px; left:12px; border-right:none; border-bottom:none; }
+  .corner.tr{ top:12px; right:12px; border-left:none; border-bottom:none; }
+  .corner.bl{ bottom:12px; left:12px; border-right:none; border-top:none; }
+  .corner.br{ bottom:12px; right:12px; border-left:none; border-top:none; }
+
+  .names-section{
+    padding: 56px 40px 40px;
+    text-align:center;
+    position:relative;
+    z-index:2;
+  }
+  .divider{
+    display:flex; align-items:center; justify-content:center; gap:12px;
+    width:160px; margin:0 auto;
+  }
+  .divider span:not(.diamond){
+    flex:1; height:1px;
+    background: linear-gradient(to right, transparent, var(--gold-line-strong));
+  }
+  .divider span.diamond{
+    width:8px; height:8px; transform:rotate(45deg);
+    background: var(--gold);
+    flex:none;
+    box-shadow: 0 1px 3px rgba(169,130,72,0.3);
+  }
+
+  .couple-names{
+    margin-top:28px; margin-bottom:28px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight:600;
+    font-size:72px;
+    line-height:1;
+    color: var(--ink);
+    letter-spacing: -1px;
+  }
+  .couple-names .amp{
+    font-weight:400; font-size:44px; color:var(--gold-bright); margin:6px 0;
+  }
+
+  .meta-row{
+    margin-top:32px;
+    display:flex; align-items:stretch; justify-content:center; gap:24px;
+    font:500 12px/1.2 var(--font-sans);
+    letter-spacing:0.3em; text-transform:uppercase; color: var(--ink);
+  }
+  .meta-col{ text-align:right; }
+  .meta-col.start{ text-align:left; }
+  .meta-label{
+    color: var(--gold-deep); font-size:10px; letter-spacing:0.5em; margin-bottom:8px;
+    font-weight:600;
+  }
+  .meta-sep{ width:1.5px; background: var(--gold-line-strong); }
+  .meta-date{
+    font-family: var(--font-display); font-style:italic; font-size:45px; font-weight:600;
+    color: var(--ink); letter-spacing:normal; line-height:1; text-transform:none;
+    display:flex; flex-direction:column; align-items:center;
+  }
+  .meta-date .month{
+    font-size:11px; letter-spacing:0.5em; text-transform:uppercase;
+    color: var(--gold-deep); font-family: var(--font-sans); margin-bottom:2px;
+    font-weight:600;
+  }
+  .meta-date .year{
+    font-size:11px; letter-spacing:0.5em; text-transform:uppercase;
+    color: var(--gold-deep); font-family: var(--font-sans); margin-top:10px;
+    font-weight:600;
+  }
+
+  .message-section{
+    padding: 44px 50px 52px;
+    text-align:center;
+    position:relative;
+    z-index:2;
+  }
+  .message-section::before{
+    content:'';
+    position:absolute;
+    top:0; left:50%;
+    transform:translateX(-50%);
+    width:60px;
+    height:1px;
+    background: linear-gradient(to right, transparent, var(--gold-line-strong), transparent);
+  }
+  .message-section p{
+    margin:0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight:300;
+    font-size:21px;
+    line-height:1.75;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.3px;
+  }
+  .message-sig{
+    margin-top:22px;
+    font:500 10px/1 var(--font-sans);
+    letter-spacing:0.6em; text-transform:uppercase; color: var(--gold-deep);
+  }
+
+  .venue-section{ 
+    padding: 0 40px 48px; 
+    max-width: 700px; 
+    margin: 0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .venue-card{
+    border:1.5px solid var(--gold-line-strong);
+    padding: 36px 32px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(247,239,224,0.3) 100%);
+    box-shadow: 0 10px 40px rgba(42,34,24,0.08), inset 0 1px 1px rgba(255,255,255,0.6);
+    backdrop-filter: blur(4px);
+  }
+  .venue-kicker{
+    font:500 10px/1 var(--font-sans);
+    letter-spacing:0.6em; text-transform:uppercase; color: var(--gold);
+    text-align:center; margin-bottom:14px;
+  }
+  .venue-name{
+    margin:0; text-align:center;
+    font-family: var(--font-display);
+    font-weight:600; font-style:italic; font-size:32px; line-height:1.3; color: var(--ink);
+  }
+  .venue-addr{
+    margin-top:10px; text-align:center;
+    font:300 13.5px/1.6 var(--font-sans); color: var(--ink-soft); letter-spacing:0.04em;
+  }
+  .map-preview{
+    margin-top:24px;
+    position:relative; width:100%; height:240px;
+    overflow:hidden; background: linear-gradient(135deg, #f5f1ed, #efe9dd);
+    box-shadow: 0 8px 24px rgba(42,34,24,0.1), inset 0 1px 1px rgba(255,255,255,0.8);
+    border-radius: 4px;
+  }
+  .map-pin-wrap{
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+  }
+  .map-pin{
+    position:relative; display:inline-block; width:16px; height:16px;
+  }
+  .map-pin::before{
+    content:''; position:absolute; inset:0; border-radius:50%;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.7), 0 0 0 5px rgba(169,130,72,0.25), 0 2px 8px rgba(42,34,24,0.2);
+  }
+  .map-pin-label{
+    padding:6px 12px; border-radius:999px; background: rgba(247,239,224,0.95); color: var(--ink);
+    font:500 10px/1 var(--font-sans); letter-spacing:0.25em; text-transform:uppercase;
+    box-shadow: 0 4px 12px rgba(42,34,24,0.15), inset 0 1px 1px rgba(255,255,255,0.6);
+  }
+  .map-link{
+    margin-top:24px; width:100%; height:52px;
+    border:1.5px solid var(--gold); background:transparent; color: var(--ink);
+    font:500 12px/1 var(--font-sans); letter-spacing:0.20em; text-transform:uppercase;
+    cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    text-decoration:none;
+    transition: all 0.3s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .map-link::before{
+    content:'';
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: linear-gradient(90deg, transparent, rgba(169,130,72,0.1), transparent);
+    transform:translateX(-100%);
+  }
+  .map-link:hover{
+    background: rgba(169,130,72,0.05);
+    border-color: var(--gold-bright);
+    box-shadow: 0 6px 16px rgba(169,130,72,0.15);
+  }
+
+  .rsvp-section{ 
+    padding: 0 40px 44px; 
+    text-align:center; 
+    max-width:700px; 
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .rsvp-lede{
+    margin-top:24px; margin-bottom:28px;
+    font:300 18px/1.5 var(--font-serif); font-style:italic; color: var(--ink-soft);
+  }
+  .rsvp-btn{
+    width:100%; height:58px; border:none;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    color: var(--on-accent);
+    font:500 13px/1 var(--font-sans); letter-spacing:0.45em; text-transform:uppercase;
+    cursor:pointer; position:relative;
+    box-shadow: 0 8px 24px rgba(15,42,34,0.2), inset 0 1px 1px rgba(255,255,255,0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight:600;
+  }
+  .rsvp-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(15,42,34,0.25), inset 0 1px 1px rgba(255,255,255,0.3);
+  }
+  .rsvp-btn .ring{
+    position:absolute; inset:4px; border:1.5px solid var(--gold);
+    opacity:0.5; pointer-events:none;
+  }
+
+  .footer-mark{
+    padding: 5px 40px 60px; text-align:center;
+    position:relative;
+    z-index:2;
+  }
+  .footer-mark span{
+    font:500 10px/1 var(--font-sans); letter-spacing:0.6em; text-transform:uppercase;
+    color: var(--gold-deep); opacity:0.6;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .brand-line{
+    height: 1px; width: 100px; margin: 16px auto;
+    background: linear-gradient(to right, transparent, var(--gold-line-strong), transparent);
+  }
+  .brand-name{
+    font:600 14px/1 var(--font-display); font-style:italic;
+    color: var(--gold);
+    margin-bottom: 18px;
+    letter-spacing: 0.15em;
+  }
+  .social-link{
+    display: inline-flex; align-items:center; gap:10px;
+    text-decoration: none;
+    color: var(--gold);
+    font:500 11px/1 var(--font-sans);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border: 1px solid var(--gold-line-strong);
+    border-radius: 999px;
+    transition: all 0.3s ease;
+  }
+  .social-link:hover{
+    border-color: var(--gold);
+    background: rgba(169,130,72,0.08);
+    transform: translateY(-2px);
+  }
+  .social-icon{
+    width: 12px; height: 12px;
+    display: inline-block;
+  }
+
+  /* ---------- RSVP overlay ---------- */
+  .rsvp-overlay{
+    position:fixed; inset:0;
+    background: linear-gradient(180deg, #FDFBF7 0%, #F5F1E9 100%);
+    z-index: 60;
+    transform: translateY(100%);
+    transition: transform .45s cubic-bezier(.32,.72,0,1);
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .rsvp-overlay::before{
+    content:'';
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background-image: 
+      radial-gradient(circle at 2px 2px, rgba(169,130,72,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events:none;
+    z-index:1;
+  }
+  .rsvp-overlay.open{ transform: translateY(0); }
+  .rsvp-close{
+    position:fixed; top:28px; right:24px; z-index:65;
+    width:40px; height:40px; border-radius:50%;
+    border:1.5px solid var(--gold-line-strong); 
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(8px);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; color: var(--ink);
+    box-shadow: 0 4px 12px rgba(42,34,24,0.12);
+    transition: all 0.3s ease;
+  }
+  .rsvp-close:hover{
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 6px 16px rgba(42,34,24,0.16);
+    transform: rotate(90deg);
+  }
+  .rsvp-body{
+    max-width: 500px; margin: 0 auto;
+    padding: 100px 40px 60px; text-align:center;
+    position:relative;
+    z-index:2;
+  }
+  .rsvp-q{
+    margin:0; font-family: var(--font-display); font-style:italic; font-weight:600;
+    font-size:40px; color: var(--ink); line-height:1.2;
+  }
+  .rsvp-sub{
+    margin-top:12px; font:300 15px/1.6 var(--font-serif); font-style:italic; color: var(--ink-soft);
+  }
+  .rsvp-options{ margin-top:40px; display:flex; flex-direction:column; gap:16px; }
+  .rsvp-option{
+    border:1.5px solid var(--gold-line-strong); 
+    background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(247,239,224,0.2) 100%);
+    padding: 24px; cursor:pointer; text-align:center;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(42,34,24,0.06);
+    backdrop-filter: blur(4px);
+  }
+  .rsvp-option:hover{ 
+    border-color: var(--gold);
+    background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(247,239,224,0.4) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(42,34,24,0.1);
+  }
+  .rsvp-option .ok-kicker{
+    font:500 10px/1 var(--font-sans); letter-spacing:0.4em; text-transform:uppercase;
+    color: var(--gold);
+  }
+  .rsvp-option .ok-title{
+    margin-top:10px; font-family: var(--font-serif); font-style:italic; font-weight:500;
+    font-size:26px; color: var(--ink);
+  }
+  .rsvp-step{ display:none; animation: fadeIn 0.4s ease; }
+  .rsvp-step.active{ display:block; }
+  @keyframes fadeIn{
+    from{ opacity:0; transform:translateY(10px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  .party-control{
+    margin-top:36px; display:flex; align-items:center; justify-content:center; gap:32px;
+  }
+  .party-control button{
+    width:48px; height:48px; border-radius:50%; border:1.5px solid var(--gold);
+    background:transparent; color: var(--ink); font-size:20px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition: all 0.3s ease;
+    font-weight:600;
+  }
+  .party-control button:hover{
+    background: var(--gold);
+    color: white;
+    box-shadow: 0 4px 12px rgba(169,130,72,0.3);
+    transform: scale(1.1);
+  }
+  .party-count{
+    font-family: var(--font-display); font-style:italic; font-weight:600; font-size:42px;
+    min-width:60px;
+    color: var(--ink);
+  }
+  .party-label{
+    margin-top:12px; font:500 11px/1 var(--font-sans); letter-spacing:0.25em;
+    text-transform:uppercase; color: var(--ink-soft);
+  }
+  .guest-details{
+    margin-top:36px; display:flex; flex-direction:column; gap:18px; max-width:420px; margin-left:auto; margin-right:auto;
+  }
+  .input-group{
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .input-group label{
+    font:500 11px/1 var(--font-sans); letter-spacing:0.4em; text-transform:uppercase;
+    color: var(--gold-deep);
+  }
+  .input-group input, .input-group textarea{
+    padding: 12px 14px;
+    border: 1.5px solid var(--gold-line-strong);
+    border-radius: 4px;
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: var(--ink);
+    background: rgba(247,239,224,0.4);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+  }
+  .input-group input:focus, .input-group textarea:focus{
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(247,239,224,0.7);
+    box-shadow: 0 0 0 3px rgba(169,130,72,0.1);
+  }
+  .input-group input:required{
+    border-color: var(--gold-line-strong);
+  }
+  .input-group select{
+    padding: 12px 14px;
+    border: 1.5px solid var(--gold-line-strong);
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--ink);
+    background: rgba(247,239,224,0.4);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .input-group select:focus{
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(247,239,224,0.7);
+    box-shadow: 0 0 0 3px rgba(169,130,72,0.1);
+  }
+  .input-group select:hover{
+    border-color: var(--gold-line-strong);
+  }
+  .input-group label span{
+    color: var(--rose);
+  }
+  .input-group textarea{
+    resize: vertical;
+    min-height: 80px;
+    font-family: var(--font-serif);
+    font-size: 13px;
+  }
+  .confirm-btn{
+    margin-top:44px; width:100%; height:58px; border:none;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    color: var(--on-accent);
+    font:500 13px/1 var(--font-sans); letter-spacing:0.45em; text-transform:uppercase;
+    cursor:pointer;
+    box-shadow: 0 8px 24px rgba(15,42,34,0.2);
+    transition: all 0.3s ease;
+    font-weight:600;
+  }
+  .confirm-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(15,42,34,0.25);
+  }
+  .back-link{
+    margin-top:20px; border:none; background:transparent; color: var(--ink-soft);
+    font:500 11px/1 var(--font-sans); letter-spacing:0.25em; text-transform:uppercase;
+    cursor:pointer; text-decoration:underline;
+    transition: color 0.3s ease;
+  }
+  .back-link:hover{
+    color: var(--gold);
+  }
+
+  .thanks-kicker{
+    font:500 10px/1 var(--font-sans); letter-spacing:0.5em; text-transform:uppercase;
+    color: var(--gold);
+  }
+  .thanks-title{
+    margin-top:18px; font-family: var(--font-display); font-style:italic; font-weight:600;
+    font-size:40px; color: var(--ink); line-height:1.3;
+  }
+  .thanks-body{
+    margin-top:20px; font:300 16px/1.65 var(--font-serif); font-style:italic; color: var(--ink-soft);
+  }
+  .thanks-body em{
+    font-weight:400; color: var(--ink);
+    display:block; margin-top:16px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .music-btn.playing .bars span{ animation:none; }
+    .rsvp-overlay{ transition:none; }
+    .rsvp-step{ animation:none; }
+  }
+
+  @media (max-width: 768px){
+    .hero{ padding: 80px 30px 36px; }
+    .guest-name{ font-size:48px; }
+    .photo-wrap{ padding: 0 24px; }
+    .names-section{ padding: 44px 24px 32px; }
+    .couple-names{ font-size:56px; }
+    .message-section{ padding: 32px 28px 40px; }
+    .venue-section{ padding: 0 24px 36px; }
+    .rsvp-section{ padding: 0 24px 30px; }
+    .rsvp-body{ padding: 80px 24px 60px; }
+    .footer-mark{ padding: 7px 24px 70px; }
+    .meta-row{ gap:16px; }
+    .brand-name{ font-size: 12px; }
+    .social-link{ font-size: 9px; padding: 6px 12px; }
+    .social-icon{ width: 10px; height: 10px; }
+  }
+</style>
+</head>
+<body class="cover-active">
+
+<div class="cover" id="cover">
+  <div class="cover-frame"></div>
+  <h1 class="cover-brand">7kaytna</h1>
+  <div class="cover-eyebrow">you are invited</div>
+  <h1 class="cover-title">TO THE WEDDING OF</h1>
+  <div class="cover-names">Ahmed<span class="amp">&amp;</span>Sarah</div>
+  <div class="cover-date">Sunday · 27 June 2026</div>
+  <div class="cover-tap">
+    <span class="ring-icon">
+      <svg width="12" height="12" viewBox="0 0 10 10"><path d="M2 1.2 L8 5 L2 8.8 Z" fill="currentColor"></path></svg>
+    </span>
+    tap to open
+  </div>
+</div>
+
+<div class="invite">
+  <!-- music toggle -->
+  <button class="music-btn" id="musicBtn" type="button" aria-label="Play music">
+    <span class="bars" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </span>
+    <span class="dot">
+      <svg width="12" height="12" viewBox="0 0 10 10" id="playIcon">
+        <path d="M2 1.2 L8 5 L2 8.8 Z" fill="currentColor"></path>
+      </svg>
+    </span>
+  </button>
+
+  <!-- hero -->
+  <div class="hero">
+    <h1 class="hero-brand">7kaytna</h1>
+    <div class="eyebrow">A Wedding Story</div>
+    <h2 class="guest-name">OUR DEAREST</h2>
+    <p class="hero-lede">You are invited to celebrate the wedding of</p>
+  </div>
+
+  <!-- photo -->
+  <div class="photo-wrap">
+    <div class="photo-frame">
+      <img src="assets/images/photo.jpg" alt="The couple" />
+      <span class="corner tl"></span>
+      <span class="corner tr"></span>
+      <span class="corner bl"></span>
+      <span class="corner br"></span>
+    </div>
+  </div>
+
+  <!-- names -->
+  <div class="names-section">
+    <div class="divider"><span></span><span class="diamond"></span><span></span></div>
+    <div class="couple-names">
+      <div>Ahmed</div>
+      <div class="amp">&amp;</div>
+      <div>Sarah</div>
+    </div>
+    <div class="divider"><span></span><span class="diamond"></span><span></span></div>
+
+    <div class="meta-row">
+      <div class="meta-col">
+        <div class="meta-label">day</div>
+        Sunday
+      </div>
+      <div class="meta-sep"></div>
+      <div class="meta-date">
+        <span class="month">Jun</span>
+        27
+        <span class="year">2026</span>
+      </div>
+      <div class="meta-sep"></div>
+      <div class="meta-col start">
+        <div class="meta-label">at</div>
+        8:00 PM
+      </div>
+    </div>
+  </div>
+  <!-- welcome message -->
+  <div class="message-section">
+    <p>We're overjoyed to begin forever together — and there's no day we'd rather spend than with you. Please join us for an evening of love, family, and celebration.</p>
+    <div class="message-sig">ahmed &amp; sarah</div>
+  </div>
+
+  <!-- venue -->
+  <div class="venue-section">
+    <div class="venue-card">
+      <div class="venue-kicker">the venue</div>
+      <h3 class="venue-name">Royal Maxim Palace Kempinski</h3>
+      <p class="venue-addr">Katameya Ring Road, New Cairo</p>
+
+      <div class="map-preview">
+        <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0">
+          <defs>
+            <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:var(--gold-line-strong);stop-opacity:0.4" />
+              <stop offset="100%" style="stop-color:var(--gold-line);stop-opacity:0.2" />
+            </linearGradient>
+          </defs>
+          <g transform="scale(1.2,1)">
+  <path d="M -10 70 C 80 40, 140 130, 240 80 S 420 50, 460 100"
+        fill="none"
+        stroke="url(#mapGradient)"
+        stroke-width="16"
+        stroke-linecap="round"
+        opacity="0.7"/>
+        
+  <path d="M -10 70 C 80 40, 140 130, 240 80 S 420 50, 460 100"
+        fill="none"
+        stroke="var(--ivory-soft)"
+        stroke-width="7"
+        stroke-linecap="round"/>
+</g>
+          <line x1="0" y1="20" x2="100%" y2="20" stroke="var(--gold-line)" stroke-width="0.5" opacity="0.3"></line>
+          <line x1="0" y1="55" x2="100%" y2="55" stroke="var(--gold-line)" stroke-width="0.5" opacity="0.3"></line>
+          <line x1="0" y1="95" x2="100%" y2="95" stroke="var(--gold-line)" stroke-width="0.5" opacity="0.3"></line>
+          <line x1="0" y1="115" x2="100%" y2="115" stroke="var(--gold-line)" stroke-width="0.5" opacity="0.3"></line>
+          <line x1="60" y1="0" x2="60" y2="100%" stroke="var(--gold-line)" stroke-width="0.5" opacity="0.3"></line>
+          <line x1="130" y1="0" x2="130" y2="100%" stroke="var(--gold-line)" stroke-width="0.5" opacity="0.3"></line>
+          <line x1="210" y1="0" x2="210" y2="100%" stroke="var(--gold-line)" stroke-width="0.5" opacity="0.3"></line>
+          <line x1="290" y1="0" x2="290" y2="100%" stroke="var(--gold-line)" stroke-width="0.5" opacity="0.3"></line>
+          <line x1="340" y1="0" x2="340" y2="100%" stroke="var(--gold-line)" stroke-width="0.5" opacity="0.3"></line>
+        </svg>
+        <div class="map-pin-wrap">
+          <span class="map-pin"></span>
+          <span class="map-pin-label">The venue</span>
+        </div>
+      </div>
+
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Royal+Maxim+Palace+Kempinski+Cairo" target="_blank" rel="noopener noreferrer">
+        <span class="map-pin"></span>
+        View location on map
+      </a>
+    </div>
+  </div>
+
+  <!-- rsvp trigger -->
+  <div class="rsvp-section">
+    <div class="divider" style="width:70px"><span></span><span class="diamond"></span><span></span></div>
+    <p class="rsvp-lede">Kindly grace us with your reply.</p>
+    <button class="rsvp-btn" id="openRsvp" type="button">
+      RSVP
+      <span class="ring"></span>
+    </button>
+  </div>
+
+  <div class="footer-mark">
+    <div class="brand-line"></div>
+    <div class="brand-name">7kaytna</div>
+    <a href="https://www.instagram.com/7kaytna.eg" target="_blank" rel="noopener noreferrer" class="social-link">
+      <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><circle cx="17.5" cy="6.5" r="1.5"></circle></svg>
+      @7kaytna.eg
+    </a>
+  </div>
+</div>
+
+<!-- RSVP overlay -->
+<div class="rsvp-overlay" id="rsvpOverlay">
+  <button class="rsvp-close" id="closeRsvp" type="button" aria-label="Close">
+    <svg width="16" height="16" viewBox="0 0 14 14"><path d="M1 1 L13 13 M13 1 L1 13" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+  </button>
+
+  <div class="rsvp-body">
+    <!-- step 1: question -->
+    <div class="rsvp-step active" id="stepQuestion">
+      <h3 class="rsvp-q">Will you join us?</h3>
+      <p class="rsvp-sub">Kindly let us know.</p>
+      <div class="rsvp-options">
+        <div class="rsvp-option" id="optYes">
+          <div class="ok-kicker">Yes — with all our hearts</div>
+          <div class="ok-title">Joyfully Attending</div>
+        </div>
+        <div class="rsvp-option" id="optNo">
+          <div class="ok-kicker">With heavy hearts</div>
+          <div class="ok-title">Regretfully Declining</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- step 2: party size -->
+    <div class="rsvp-step" id="stepParty">
+      <h3 class="rsvp-q">How many will join?</h3>
+      <p class="rsvp-sub">Including yourself.</p>
+      <div class="party-control">
+        <button id="decBtn" type="button" aria-label="Decrease">−</button>
+        <span class="party-count" id="partyCount">1</span>
+        <button id="incBtn" type="button" aria-label="Increase">+</button>
+      </div>
+      <div class="party-label">guests</div>
+      
+      <div class="guest-details">
+        <div class="input-group">
+          <label for="coupleSelect">Share with <span style="color: var(--accent-light);">*</span></label>
+          <select id="coupleSelect" required>
+            <option value="ahmed">Ahmed</option>
+            <option value="sarah">Sarah</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="guestName">Your Name <span style="color: var(--accent-light);">*</span></label>
+          <input type="text" id="guestName" placeholder="Enter your name" required />
+        </div>
+        <div class="input-group">
+          <label for="guestMessage">Your Message</label>
+          <textarea id="guestMessage" placeholder="Write a message to the couple..."></textarea>
+        </div>
+      </div>
+      
+      <button class="confirm-btn" id="confirmBtn" type="button">Confirm attendance</button>
+      <button class="back-link" id="backFromParty" type="button">Back</button>
+    </div>
+
+    <!-- step 3a: thanks (yes) -->
+    <div class="rsvp-step" id="stepThanksYes">
+      <div class="thanks-kicker">we cannot wait</div>
+      <h3 class="thanks-title">With joy,<br/>we will be expecting you</h3>
+      <p class="thanks-body" id="thanksYesBody">Your seat will be ready for you on the wedding day.</p>
+      <button class="back-link" id="backFromThanksYes" type="button">Back to invitation</button>
+    </div>
+
+    <!-- step 3b: thanks (no) -->
+    <div class="rsvp-step" id="stepThanksNo">
+      <div class="thanks-kicker">we will miss you</div>
+      <h3 class="thanks-title">Your kindness is felt</h3>
+      <p class="thanks-body">Thank you for letting us know. You will be in our thoughts on our wedding day.</p>
+      <button class="back-link" id="backFromThanksNo" type="button">Back to invitation</button>
+    </div>
+  </div>
+</div>
+
+<audio id="bgMusic" loop preload="none">
+  <source src="assets/music/song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- EmailJS Library -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+
+<script>
+  // ---- envelope cover ----
+  const cover = document.getElementById('cover');
+  const isPlayingRef = { value: false };
+  const musicBtn = document.getElementById('musicBtn');
+  const bgMusic = document.getElementById('bgMusic');
+  const playIcon = document.getElementById('playIcon');
+
+  cover.addEventListener('click', () => {
+    cover.classList.add('opened');
+    document.body.classList.remove('cover-active');
+    // auto-play music when invitation opens
+    setTimeout(() => {
+      bgMusic.play().catch(() => {});
+      musicBtn.classList.add('playing');
+      playIcon.innerHTML = '<rect x="1.5" y="1" width="2.6" height="8" fill="currentColor"></rect><rect x="6" y="1" width="2.6" height="8" fill="currentColor"></rect>';
+      isPlayingRef.value = true;
+    }, 300);
+  });
+
+  // ---- music toggle ----
+  musicBtn.addEventListener('click', () => {
+    if (!isPlayingRef.value) {
+      bgMusic.play().catch(() => {});
+      musicBtn.classList.add('playing');
+      playIcon.innerHTML = '<rect x="1.5" y="1" width="2.6" height="8" fill="currentColor"></rect><rect x="6" y="1" width="2.6" height="8" fill="currentColor"></rect>';
+    } else {
+      bgMusic.pause();
+      musicBtn.classList.remove('playing');
+      playIcon.innerHTML = '<path d="M2 1.2 L8 5 L2 8.8 Z" fill="currentColor"></path>';
+    }
+    isPlayingRef.value = !isPlayingRef.value;
+  });
+
+  // ---- RSVP overlay ----
+  const rsvpOverlay = document.getElementById('rsvpOverlay');
+  const openRsvp = document.getElementById('openRsvp');
+  const closeRsvp = document.getElementById('closeRsvp');
+
+  const steps = {
+    question: document.getElementById('stepQuestion'),
+    party: document.getElementById('stepParty'),
+    thanksYes: document.getElementById('stepThanksYes'),
+    thanksNo: document.getElementById('stepThanksNo'),
+  };
+
+  function showStep(name){
+    Object.values(steps).forEach(s => s.classList.remove('active'));
+    steps[name].classList.add('active');
+  }
+
+  openRsvp.addEventListener('click', () => {
+    rsvpOverlay.classList.add('open');
+    showStep('question');
+    document.body.style.overflow = 'hidden';
+  });
+  closeRsvp.addEventListener('click', () => {
+    rsvpOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  document.getElementById('optYes').addEventListener('click', () => showStep('party'));
+  document.getElementById('optNo').addEventListener('click', () => showStep('thanksNo'));
+  document.getElementById('backFromParty').addEventListener('click', () => showStep('question'));
+  document.getElementById('backFromThanksYes').addEventListener('click', () => {
+    rsvpOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  document.getElementById('backFromThanksNo').addEventListener('click', () => {
+    rsvpOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  let partySize = 1;
+  const partyCount = document.getElementById('partyCount');
+  const guestNameInput = document.getElementById('guestName');
+  const guestMessageInput = document.getElementById('guestMessage');
+  
+  document.getElementById('incBtn').addEventListener('click', () => {
+    partySize = Math.min(partySize + 1, 12);
+    partyCount.textContent = partySize;
+  });
+  document.getElementById('decBtn').addEventListener('click', () => {
+    partySize = Math.max(partySize - 1, 1);
+    partyCount.textContent = partySize;
+  });
+  document.getElementById('confirmBtn').addEventListener('click', () => {
+    const guestName = guestNameInput.value.trim();
+    
+    // التحقق من أن الاسم مملوء
+    if (!guestName) {
+      guestNameInput.style.borderColor = 'var(--accent-light)';
+      guestNameInput.style.boxShadow = '0 0 0 3px rgba(45, 107, 95, 0.3)';
+      setTimeout(() => {
+        guestNameInput.style.borderColor = '';
+        guestNameInput.style.boxShadow = '';
+      }, 1500);
+      return;
+    }
+    
+    const guestMessage = guestMessageInput.value.trim();
+    const coupleSelect = document.getElementById('coupleSelect').value;
+    
+    // WhatsApp numbers
+    const whatsappNumbers = {
+      ahmed: '+201063040912',
+      sarah: '+201134567890'
+    };
+    
+    // إنشاء رسالة WhatsApp
+    const whatsappText = `[ Wedding Confirmation ]\n\nName: ${guestName}\nGuests: [ ${partySize} ]\n\nMessage:\n${guestMessage || 'No message'}`;
+    
+    const whatsappUrl = `https://wa.me/${whatsappNumbers[coupleSelect].replace('+', '')}?text=${encodeURIComponent(whatsappText)}`;
+    
+    // عرض شاشة شكر مع تفاصيل
+    const body = document.getElementById('thanksYesBody');
+    
+    let thankYouText = partySize === 1
+      ? `Your seat will be ready for you on the wedding day.`
+      : partySize + ' seats will be ready for you on the wedding day.';
+    
+    body.innerHTML = thankYouText;
+    
+    // Log RSVP data
+    console.log({
+      name: guestName,
+      partySize: partySize,
+      message: guestMessage,
+      sharedWith: coupleSelect,
+      timestamp: new Date().toISOString()
+    });
+    
+    showStep('thanksYes');
+    
+    // فتح WhatsApp بعد 500ms
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+    }, 500);
+  });
+</script>
+
+</body>
+</html>
